@@ -1,0 +1,20 @@
+{
+  "name": "notchbar",
+  "version": "1.0.0",
+  "description": "A notch-style dashboard for the top of your Windows screen",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.example.notchbar",
+    "productName": "NotchBar",
+    "files": ["main.js", "preload.js", "renderer/**", "assets/**"],
+    "win": { "target": "portable", "icon": "assets/icon.png" }
+  }
+}
