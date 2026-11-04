@@ -1,0 +1,60 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="notch">
+  <div id="pill"><span id="pTime">--:--</span></div>
+  <div id="panel">
+    <header>
+      <b id="hDate"></b>
+      <span class="sp"></span>
+      <button id="pin" title="Keep open">Pin</button>
+      <button id="close" title="Close">✕</button>
+    </header>
+
+    <main>
+      <section id="v-home" class="view">
+        <div class="grid">
+          <div class="card"><small>Time</small><big id="hTime"></big><em id="hDay"></em></div>
+          <div class="card"><small>System</small>
+            <div class="bar"><span>CPU</span><i><u id="bCpu"></u></i><b id="tCpu">0%</b></div>
+            <div class="bar"><span>RAM</span><i><u id="bRam"></u></i><b id="tRam">0%</b></div></div>
+          <div class="card"><small>Focus</small><big id="hFocus">25:00</big>
+            <button id="hToggle">Start</button></div>
+          <div class="card"><small>Clipboard</small><div id="hClip" class="mini"></div></div>
+          <div class="card"><small>Notes</small><div id="hNote" class="mini"></div></div>
+          <div class="card"><small>File shelf</small><big id="hFiles">0</big><em>files parked</em></div>
+        </div>
+      </section>
+
+      <section id="v-clipboard" class="view">
+        <div class="row"><input id="search" placeholder="Search clipboard history"><button id="clearClip">Clear all</button></div>
+        <div id="clipList" class="list"></div>
+      </section>
+
+      <section id="v-timer" class="view">
+        <div class="two">
+          <div class="card"><small>Timer</small><big id="tDisp">25:00</big>
+            <div class="row"><button class="pre" data-m="5">5m</button><button class="pre" data-m="15">15m</button><button class="pre" data-m="25">25m</button><button class="pre" data-m="45">45m</button></div>
+            <div class="row"><button id="tStart">Start</button><button id="tReset">Reset</button></div></div>
+          <div class="card"><small>Stopwatch</small><big id="swDisp">00:00.0</big>
+            <div class="row"><button id="swStart">Start</button><button id="swReset">Reset</button></div></div>
+        </div>
+      </section>
+
+      <section id="v-files" class="view">
+        <div id="drop">Drop files here to park them</div>
+        <div id="fileList" class="list"></div>
+      </section>
+
+      <section id="v-notes" class="view"><textarea id="noteArea" placeholder="Jot something down. It saves as you type."></textarea></section>
+
+      <section id="v-clocks" class="view"><div id="clockList" class="grid"></div></section>
+    </main>
+
+    <nav id="dock"></nav>
+  </div>
+</div>
+<script src="app.js"></script>
+</body></html>
